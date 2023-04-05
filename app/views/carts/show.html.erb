@@ -1,5 +1,10 @@
 <section class="cart-show">
-
+<% def empty_cart_check(enhanced_cart) %>
+ <% if enhanced_cart.nil? || enhanced_cart.empty? %>
+   < div class ="error-message">Your cart is empty. Please add item to proceed!</div>
+    <% end %>
+      <% end %>
+      <%= empty_cart_check(enhanced_cart) %>
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
