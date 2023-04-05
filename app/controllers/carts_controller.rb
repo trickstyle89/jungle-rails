@@ -1,6 +1,8 @@
 class CartsController < ApplicationController
+  include ProductHelper
 
   def show
+    empty_cart_check(enhanced_cart)
   end
 
   def add_item

@@ -1,5 +1,4 @@
 <section class="cart-show">
-
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
@@ -7,6 +6,19 @@
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
+      <% if @cart_is_empty %>
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+          <%= flash[:notice] %> </div>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+
+            <% if @back_to_home_link %>
+              <%= link_to "Continue Shopping", root_path %>
+            <% end %>
+
+        </div>
+      <% else %>
         <tr>
           <th colspan="2">Product</th>
           <th>Unit Price</th>
@@ -32,6 +44,7 @@
     </table>
   </div>
 
+
   <div class="row">
     <div class="col-xs-12">
       <%= form_tag orders_path do %>
@@ -50,3 +63,5 @@
   </div>
 
 </section>
+<% end %>
+
