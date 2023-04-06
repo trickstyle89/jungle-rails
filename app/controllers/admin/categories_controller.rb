@@ -2,15 +2,15 @@ class Admin::CategoriesController < ApplicationController
     http_basic_authenticate_with name: "Jungle", password: "book"
 
     def index
-        @products = Category.order(id: :desc).all
+        @categories = Category.order(id: :desc).all
       end
     
       def new
-        @product = Category.new
+        @categories = Category.new
       end
     
       def create
-        @product = Category.new(product_params)
+        @categories = Category.new(product_params)
     
         if @category.save
           redirect_to [:admin, :categories], notice: 'Category created!'
@@ -22,7 +22,7 @@ class Admin::CategoriesController < ApplicationController
     
     def show
       @category = Category.find(params[:id])
-      @products = @category.products.order(created_at: :desc)
+      @products = Category.joins(:products).group(:id).select('categories.*, COUNT(products.id) as product_count')
     end
   
   end
