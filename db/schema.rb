@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_07_142522) do
+ActiveRecord::Schema.define(version: 2023_04_07_160253) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,13 +33,6 @@ ActiveRecord::Schema.define(version: 2023_04_07_142522) do
     t.index ["product_id"], name: "index_line_items_on_product_id"
   end
 
-  create_table "names", force: :cascade do |t|
-    t.string "email"
-    t.string "password_digest"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "orders", force: :cascade do |t|
     t.integer "total_cents"
     t.datetime "created_at", precision: 6, null: false
@@ -58,6 +51,14 @@ ActiveRecord::Schema.define(version: 2023_04_07_142522) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "category_id"
     t.index ["category_id"], name: "index_products_on_category_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "line_items", "orders"

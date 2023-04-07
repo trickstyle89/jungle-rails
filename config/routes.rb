@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
 
   resources :orders, only: [:create, :show]
-  resources :signups, only: [:new, :create]
+  resources :users@, only: [:new, :create]
   resources :logins, only: [:new, :create]
   resources :logout, only: [:destroy]
 

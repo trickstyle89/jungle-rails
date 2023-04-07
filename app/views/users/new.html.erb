@@ -1,11 +1,18 @@
-h1>Signup!</h1>
+<h1>Welcome to the JUNGLE! Registration From</h1>
 
 <%= form_for :user, url: '/users' do |f| %>
 
-  Name: <%= f.text_field :name %>
-  Email: <%= f.text_field :email %>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
-  <%= f.submit "Submit" %>
+  Name: <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
 
+  Email: <%= f.label :email %><br>
+  <%= f.email_field :email %><br>
+
+  Password: <%= f.label :password %><br>
+  <%= f.password_field :password %><br>
+
+  Password Confirmation: <%= f.label :password_confirmation %><br>
+  <%= f.password_field :password_confirmation %><br>
+
+  <%= f.submit 'Create Account' %>
 <% end %>
