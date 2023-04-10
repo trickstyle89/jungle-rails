@@ -1,18 +1,26 @@
-<h1 class="h2 text-success mt-3" >Welcome to the JUNGLE! Registration From</h1>
+<h1 class="h2 text-primary mt-3">Welcome to the JUNGLE! Registration Form</h1>
 
 <%= form_for :user, url: '/users' do |f| %>
 
-  <%= f.label :name %><br>
-  <%= f.text_field :name %><br>
+  <div class="form-group">
+    <%= f.label :name, class: "text-secondary" %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
 
-  <%= f.label :email %><br>
-  <%= f.email_field :email %><br>
+  <div class="form-group">
+    <%= f.label :email, class: "text-secondary" %>
+    <%= f.email_field :email, class: "form-control" %>
+  </div>
 
-  <%= f.label :password %><br>
-  <%= f.password_field :password %><br>
+  <div class="form-group">
+    <%= f.label :password, class: "text-secondary" %>
+    <%= f.password_field :password, class: "form-control" %>
+  </div>
 
-  <%= f.label :password_confirmation %><br>
-  <%= f.password_field :password_confirmation %><br>
+  <div class="form-group">
+    <%= f.label :password_confirmation, class: "text-secondary" %>
+    <%= f.password_field :password_confirmation, class: "form-control" %>
+  </div>
 
   <%= f.submit 'Create Account', class: 'btn btn-primary mt-3' %>
 <% end %>

@@ -1,14 +1,15 @@
-<h1 class="h2 text-success mt-3" >Login</h1>
+<h1 class="h2 text-primary mt-3">Login</h1>
 
 <%= form_tag '/sessions' do %>
+  <div class="form-floating mb-3">
+    <%= text_field_tag :email, nil, class: "form-control", id: "emailInput", placeholder: "name@example.com" %>
+    <label for="emailInput">Email address</label>
+  </div>
 
-  <div class="mb-2">
-  Email: <%= text_field_tag :email %>
+  <div class="form-floating mb-3">
+    <%= password_field_tag :password, nil, class: "form-control", id: "passwordInput", placeholder: "Password" %>
+    <label for="passwordInput">Password</label>
   </div>
-  <div class="mb-2">
-  Password: <%= password_field_tag :password %>
-  </div>
-  <div>
-  <%= submit_tag "Submit" %>
-  </div>
+
+  <%= submit_tag "Submit", class: "btn btn-primary" %>
 <% end %>
