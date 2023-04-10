@@ -10,10 +10,8 @@ def create
     session[:user_id] = @user.id
     redirect_to '/'
   else
-    if User.find_by(email: @user.email.downcase)
-      flash[:error] = 'Email has already been taken.'
-    end
-    redirect_to '/signup'
+    flash[:error] = 'Email has already been taken.'
+    render 'new'
   end
 end
 
