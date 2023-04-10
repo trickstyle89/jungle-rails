@@ -1,5 +1,11 @@
 <h1 class="h2 text-primary mt-3">Welcome to the JUNGLE! Registration Form</h1>
 
+<% if flash[:error] %>
+  <div class="alert alert-danger">
+    <%= flash[:error] %>
+    </div>
+    <% end %>
+
 <%= form_for :user, url: '/users' do |f| %>
 
   <div class="form-group">
