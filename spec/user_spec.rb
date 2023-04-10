@@ -29,14 +29,14 @@ RSpec.describe User, type: :model do
       it 'should check for duplicate emails' do
         @user = User.new(
           name: 'John Doe',
-          email: 'TEST@TEST.com',
+          email: 'test@test.com',
           password: 'password',
           password_confirmation: 'password'
         )
         @user.save
         @user2 = User.new(
           name: 'Jane Doe',
-          email: 'test@test.com',
+          email: 'TEST@TEST.com',
           password: 'password',
           password_confirmation: 'password'
         )
