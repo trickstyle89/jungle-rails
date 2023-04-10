@@ -1,0 +1,3 @@
+class Widget < ApplicationRecord
+    
+end
