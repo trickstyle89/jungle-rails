@@ -48,6 +48,17 @@ RSpec.describe User, type: :model do
         )
         expect(@user2).to_not be_valid
     end
-
+            
+    it 'should return a user when given valid email with leading/trailing spaces' do
+        @user.save
+        authenticated_user = User.authenticate_with_credentials(" test@test.com ", "password")
+        expect(authenticated_user).to eq(@user)
+    end
+      
+    it 'should return a user when given a valid email with different case' do
+        @user.save
+        authenticated_user = User.authenticate_with_credentials("TEST@test.com", "password")
+        expect(authenticated_user).to eq(@user)
+    end
   end
 end
