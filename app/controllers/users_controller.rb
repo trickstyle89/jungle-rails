@@ -10,7 +10,6 @@ def create
     session[:user_id] = @user.id
     redirect_to '/'
   else
-    flash[:error] = 'Email has already been taken.'
     render 'new'
   end
 end

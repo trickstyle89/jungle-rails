@@ -6,7 +6,10 @@
     </div>
     <% end %>
 
+
 <%= form_for :user, url: '/users' do |f| %>
+  <% form_submitted = @user.persisted? %>
+  <%= f.hidden_field :form_submitted, value: form_submitted %>
 
   <div class="form-group">
     <%= f.label :name, class: "text-secondary" %>
@@ -16,16 +19,19 @@
   <div class="form-group">
     <%= f.label :email, class: "text-secondary" %>
     <%= f.email_field :email, class: "form-control" %>
+    <%= error_messages_for(:email) %>
   </div>
 
   <div class="form-group">
     <%= f.label :password, class: "text-secondary" %>
     <%= f.password_field :password, class: "form-control" %>
+    <%= error_messages_for(:password) %>
   </div>
 
   <div class="form-group">
     <%= f.label :password_confirmation, class: "text-secondary" %>
     <%= f.password_field :password_confirmation, class: "form-control" %>
+    <%= error_messages_for(:password_confirmation) %>
   </div>
 
   <%= f.submit 'Create Account', class: 'btn btn-primary mt-3' %>

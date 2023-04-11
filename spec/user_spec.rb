@@ -24,9 +24,15 @@ RSpec.describe User, type: :model do
         @user.password = nil
         @user.password_confirmation = nil
         expect(@user).to_not be_valid
-      end
+    end
 
-      it 'should check for duplicate emails' do
+    it 'should require at least 3 characters for passwords' do
+        @user.password = 'aa'
+        @user.password_confirmation = 'aa'
+        expect(@user).to_not be_valid
+    end
+
+    it 'should check for duplicate emails' do
         @user = User.new(
           name: 'John Doe',
           email: 'test@test.com',
@@ -41,7 +47,7 @@ RSpec.describe User, type: :model do
           password_confirmation: 'password'
         )
         expect(@user2).to_not be_valid
-      end
+    end
 
   end
 end
