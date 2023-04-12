@@ -59,6 +59,7 @@ group :development, :test do
   gem 'net-smtp', require: false
   gem "cypress-rails"
   gem 'database_cleaner-active_record'
+  gem 'rack-cors'
 end
 
 group :development do
