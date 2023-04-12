@@ -17,14 +17,13 @@ A mini e-commerce application built with Ruby on Rails 6.1. Tested with Cypress 
 
 ## Screenshots
 
-![Homepage](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![Homepage](https://github.com/trickstyle89/jungle-rails/blob/master/app/assets/images/Admin%20Categories.png)
 
-![Products](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![Products](https://github.com/trickstyle89/jungle-rails/blob/master/app/assets/images/Products.png)
 
-![Payment](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![Payment](https://github.com/trickstyle89/jungle-rails/blob/master/app/assets/images/Card%20Transaction.png)
 
-
-![Admin](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![Admin](https://github.com/trickstyle89/jungle-rails/blob/master/app/assets/images/Admin%20Categories.png)
 
 
 ## Dependencies
